@@ -13,8 +13,12 @@ export default function Account() {
   if (isDisconnected) return <div>Disconnected</div>
 
   return <div>
-    {address}
-    <div onClick={onDisconnect}>Disconnect</div>
+    <div>
+      address:{address}
+    </div>
+    <div>
+      <button className='pointer test-btn' onClick={onDisconnect}>Disconnect</button>
+    </div>
     <ReadContract />
   </div>
 }

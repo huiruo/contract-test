@@ -8,19 +8,13 @@ import { useEffect } from "react";
 import { http, createConfig } from '@wagmi/core'
 import { hardhat } from '@wagmi/core/chains'
 import { readContract } from '@wagmi/core'
-import { erc20Abi } from "viem";
 import { abi, counterAddress } from "@/context/abi";
-
-
-
-
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
 
-async  function run() {
-    
+  async function run() {
     const config = createConfig({
       chains: [hardhat],
       transports: {
@@ -29,7 +23,7 @@ async  function run() {
     })
 
     const client = getPublicClient(config)
-    client.getBalance({address: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'}).then(b => {
+    client.getBalance({ address: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' }).then(b => {
       console.log('BBBB-------:', b);
     })
 
@@ -42,15 +36,14 @@ async  function run() {
       address: counterAddress,
       functionName: 'get',
     })
+
     console.log('------------resultxxxx:', result);
-    
-      
   }
 
   useEffect(() => {
-run()
-
+    // run()
   }, [])
+
   return (
     <>
       <Head>
@@ -59,8 +52,7 @@ run()
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        hello web
+      <main>
         <ConnectButton />
 
         <Account />

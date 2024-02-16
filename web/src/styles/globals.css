@@ -105,3 +105,14 @@ a {
     color-scheme: dark;
   }
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.test-btn {
+  padding: 10px;
+  border-radius: 8px;
+  background: grey;
+  border: 0px;
+}

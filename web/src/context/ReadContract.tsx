@@ -27,10 +27,10 @@ export function ReadContract() {
         val:{!!result?.data && result.data.toString()}
       </div>
       <div>
-        isLoading:{result.isLoading}
+        isLoading:{result.isLoading? 'true' : 'false'}
       </div>
     </div>
 
-    <div onClick={onWriteContract}>inc</div>
+    <button className='pointer test-btn' onClick={onWriteContract}>inc</button>
   </div>
 }
