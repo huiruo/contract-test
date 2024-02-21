@@ -1,4 +1,4 @@
-import ConnectButton from "@/components/counter/ConnectButton";
+import ConnectButton from "@/components/common/ConnectButton";
 import Account from "@/components/counter/Account";
 
 export default function Counter() {

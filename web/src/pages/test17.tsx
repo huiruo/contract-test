@@ -1,8 +1,10 @@
+import ConnectButton from "@/components/common/ConnectButton"
 import React from "react"
 
 export default function Test17() {
 
   return <>
-    Test17
+    <h2>Test17</h2>
+    <ConnectButton />
   </>
 }
