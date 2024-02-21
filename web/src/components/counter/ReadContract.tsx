@@ -1,5 +1,5 @@
 import { useReadContract, useWriteContract } from 'wagmi'
-import { abi, counterAddress } from './abi'
+import { abi, counterAddress } from '../../abis/abiCouter'
 
 export function ReadContract() {
   const { writeContract } = useWriteContract()
@@ -11,7 +11,7 @@ export function ReadContract() {
   })
 
   const onWriteContract = async() => {
-     const res = writeContract({
+     writeContract({
       abi,
       address: counterAddress,
       functionName: 'inc',
@@ -19,7 +19,16 @@ export function ReadContract() {
     })
   }
 
-  console.log('%c=ReadContract:', 'color:red', { result })
+  const onAdd = async() => {
+     writeContract({
+      abi,
+      address: counterAddress,
+      functionName: 'dec',
+      args: [],
+    })
+  }
+
+  console.log('%c=ReadContract:', 'color:red', result)
 
   return <div>
     <div>
@@ -31,6 +40,7 @@ export function ReadContract() {
       </div>
     </div>
 
+    <button className='pointer test-btn' style={{marginRight: '10px'}} onClick={onAdd}>dec</button>
     <button className='pointer test-btn' onClick={onWriteContract}>inc</button>
   </div>
 }

@@ -1,14 +1,13 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import ConnectButton from "@/context/ConnectButton";
 import { getPublicClient } from '@wagmi/core'
-import Account from "@/context/Account";
 import { useEffect } from "react";
 import { http, createConfig } from '@wagmi/core'
 import { hardhat } from '@wagmi/core/chains'
 import { readContract } from '@wagmi/core'
-import { abi, counterAddress } from "@/context/abi";
+import { abi, counterAddress } from "@/abis/abiCouter";
+import { Navigation } from "../components/navigation"
+import styles from "@/styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -53,9 +52,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <ConnectButton />
+        {/* <ConnectButton />
 
-        <Account />
+        <Account /> */}
+        <Navigation />
       </main>
     </>
   );
